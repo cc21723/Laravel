@@ -13,7 +13,25 @@ class StudentController extends Controller
     {
         //
         // dd('rrrrrrrrr');
-        return view('student.index');
+        // return view('student.index');
+        $data = [
+            [
+                'id'=>1,
+                'name'=>'amy'
+            ],
+            [
+                'id'=>2,
+                'name'=>'bob'
+            ],
+            [
+                'id'=>3,
+                'name'=>'cat'
+            ],
+        ];
+        
+        return view('student.index', ['data' => $data]);
+
+        
     }
 
     /**

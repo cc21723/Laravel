@@ -18,6 +18,7 @@
 
 $url = route('students.create');
 ?>
+
 <body>
     <div class="container mt-3">
         <h2>Student Table</h2>
@@ -27,12 +28,14 @@ $url = route('students.create');
             <a href="{{ route('students.create') }}" class="btn btn-success">add</a>
             <a href="{{ route('students.create') }}" class="btn btn-primary">excel</a>
         </div>
+        @php
+
+        @endphp
         <table class="table">
             <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>Edit</th>
                 </tr>
             </thead>
@@ -40,32 +43,39 @@ $url = route('students.create');
                 <tr>
                     <td>John</td>
                     <td>Doe</td>
-                    <td>john@example.com</td>
                     <td>
                         {{-- <a href="http://localhost/students/1/edit" class="btn btn-warning">edit</a> --}}
-                        <a href="{{ route('students.edit',['student' => 1])}}" class="btn btn-warning">edit</a>
+                        <a href="{{ route('students.edit', ['student' => 1]) }}" class="btn btn-warning">edit</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Mary</td>
                     <td>Moe</td>
-                    <td>mary@example.com</td>
                     <td>
                         <a href="http://localhost/students/edit" class="btn btn-warning">
-                           edit
+                            edit
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td>July</td>
                     <td>Dooley</td>
-                    <td>july@example.com</td>
                     <td>
                         <a href="http://localhost/students/edit" class="btn btn-warning">
-                           edit
+                            edit
                         </a>
                     </td>
                 </tr>
+
+                @foreach ($data as $value)
+                    <tr>
+                        <td>{{ $value['id']}}</td>
+                        <td>{{ $value['name']}}</td>
+                        <td>
+                            <a href="{{ route('students.edit', ['student' => $value['id']]) }}" class="btn btn-warning">edit</a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
