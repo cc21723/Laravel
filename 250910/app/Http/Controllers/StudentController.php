@@ -65,4 +65,10 @@ class StudentController extends Controller
     {
         //
     }
+
+    public function excel()
+    {
+        dd('students excel ok');
+        // return view('student.excel');
+    }
 }

@@ -25,6 +25,7 @@ $url = route('students.create');
         <div class="text-end mt-3">
             {{-- <a href="http://localhost/students/create" class="btn btn-success">add</a> --}}
             <a href="{{ route('students.create') }}" class="btn btn-success">add</a>
+            <a href="{{ route('students.create') }}" class="btn btn-primary">excel</a>
         </div>
         <table class="table">
             <thead>
