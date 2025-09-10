@@ -14,15 +14,17 @@
         }
     </style>
 </head>
+<?php
 
+$url = route('students.create');
+?>
 <body>
     <div class="container mt-3">
         <h2>Student Table</h2>
         <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
         <div class="text-end mt-3">
-            <a href="http://localhost/students/create"  class="btn btn-success">
-                add
-            </a>
+            {{-- <a href="http://localhost/students/create" class="btn btn-success">add</a> --}}
+            <a href="{{ route('students.create') }}" class="btn btn-success">add</a>
         </div>
         <table class="table">
             <thead>
@@ -30,6 +32,7 @@
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Email</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,16 +40,30 @@
                     <td>John</td>
                     <td>Doe</td>
                     <td>john@example.com</td>
+                    <td>
+                        {{-- <a href="http://localhost/students/1/edit" class="btn btn-warning">edit</a> --}}
+                        <a href="{{ route('students.edit',['student' => 1])}}" class="btn btn-warning">edit</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>Mary</td>
                     <td>Moe</td>
                     <td>mary@example.com</td>
+                    <td>
+                        <a href="http://localhost/students/edit" class="btn btn-warning">
+                           edit
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>July</td>
                     <td>Dooley</td>
                     <td>july@example.com</td>
+                    <td>
+                        <a href="http://localhost/students/edit" class="btn btn-warning">
+                           edit
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
