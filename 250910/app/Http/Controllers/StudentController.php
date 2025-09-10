@@ -21,7 +21,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        // dd('create');
+        return view('student.create');
     }
 
     /**
@@ -29,7 +30,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 簡單測試: 印出表單資料
+        dd($request->all());
     }
 
     /**
